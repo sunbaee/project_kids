@@ -18,4 +18,3 @@ document.addEventListener("click", e => {
         else blinking("--pastel-red");
     }
 })
-

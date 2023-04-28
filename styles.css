@@ -22,8 +22,16 @@ body {
     align-items: center;
     background-color: var(--new-black);
     color: var(--new-white);
-    height: 100vh;
-    width: 100vw;
+    height: 59.3rem;
+    width: 117.4rem;
+}
+
+.title {
+    height: max-content;
+    width: max-content;
+    font-size: 1.8rem;
+    animation: changingColor 5s infinite;
+    transform: translateX(-15rem);
 }
 
 .container {
@@ -33,6 +41,7 @@ body {
     width: 51rem;
     height: 51rem;
     gap: 1rem;
+    transform: translateX(-7rem);
 }
 
 .block {
@@ -93,4 +102,24 @@ body {
 
 .image {
     height: 50%;
+}
+
+/* ANIMATIONS */
+
+@keyframes changingColor {
+    0% {
+        color: var(--pastel-red);
+    }
+
+    33% {
+        color: var(--pastel-blue)
+    }
+
+    66% {
+        color: var(--pastel-green);
+    }
+
+    100% {
+        color: var(--pastel-red)
+    }
 }
