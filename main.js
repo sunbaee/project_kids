@@ -1,13 +1,21 @@
 /*  */
 
 document.addEventListener("click", e => {
-    const targetClasses = e.target.classList;
     
-    if (targetClasses.contains('button')) {
-        images = e.target.
-        const correct = 1;
-        if (targetClasses.contains(`option-${correct}`)) console.log('RESPOSTA CORRETA!');
-        else console.log('RESPOSTA INCORRETA!');
+    if (e.target.classList.contains('button')) {
+        const imagesClass = e.target.parentElement.previousElementSibling,
+              boxClass = imagesClass.parentElement,
+              imagesNumber = imagesClass.querySelectorAll("img").length;
+
+        function blinking(colorVar) {
+            boxClass.style = `background-color: var(${colorVar})`;
+            setTimeout(() => {
+                boxClass.style = `background-color: var(--new-black)`;
+            }, 300);
+        }
+
+        if (e.target.innerText === imagesNumber.toString()) blinking("--pastel-green");
+        else blinking("--pastel-red");
     }
 })
 
