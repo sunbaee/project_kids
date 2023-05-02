@@ -1,4 +1,9 @@
-/*  */
+/* AUDIO */
+
+const correct = document.querySelector('.correct'),
+      wrong = document.querySelector('.wrong');
+
+/* BLINKING */
 
 document.addEventListener("click", e => {
     
@@ -11,10 +16,16 @@ document.addEventListener("click", e => {
             boxClass.style = `background-color: var(${colorVar})`;
             setTimeout(() => {
                 boxClass.style = `background-color: var(--new-black)`;
-            }, 300);
+            }, 100);
         }
 
-        if (e.target.innerText === imagesNumber.toString()) blinking("--pastel-green");
-        else blinking("--pastel-red");
+        if (e.target.innerText === imagesNumber.toString()) {
+            blinking("--pastel-green");
+            correct.play();
+        }
+        else {
+            blinking("--pastel-red");
+            wrong.play();
+        }
     }
 })

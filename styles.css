@@ -17,38 +17,41 @@
 
 body {
     font-family: 'Schoolbell', cursive;
+    font-size: 1.2em;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--new-black);
     color: var(--new-white);
-    height: 59.3rem;
-    width: 117.4rem;
+    height: 100vh;
+    width: 100vw;
 }
 
 .title {
+    position: absolute;
     height: max-content;
     width: max-content;
-    font-size: 1.8rem;
+    font-size: 1.8em;
     animation: changingColor 5s infinite;
-    transform: translateX(-15rem);
+    transform: translateX(-17em);
 }
 
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     place-items: center;
-    width: 51rem;
-    height: 51rem;
-    gap: 1rem;
-    transform: translateX(-7rem);
+    font-size: 0.7em;
+    margin: 3em;
+    width: max-content;
+    height: max-content;
+    gap: 1em;
 }
 
 .block {
     position: relative;
-    border: 0.1rem solid var(--new-white);
-    width: 25rem;
-    height: 25rem;
+    border: 0.1em solid var(--new-white);
+    width: 25em;
+    height: 25em;
     transition: all .2s;
 }
 
@@ -61,7 +64,7 @@ body {
     width: 100%;
     background-color: none;
     border: none;
-    padding: 1rem;
+    padding: 1em;
 }
 
 .button {
@@ -69,11 +72,11 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'SchoolBell', cursive;
-    font-size: 1.8rem;
+    font-size: 1.8em;
     color: var(--new-white);
     width: 30%;
     height: 100%;
-    border: 0.1rem solid var(--new-white);
+    border: 0.08em solid var(--new-white);
     transition: all .3s;
 }
 
