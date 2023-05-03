@@ -126,3 +126,41 @@ body {
         color: var(--pastel-red)
     }
 }
+
+.blinkingGreen {
+    animation: blinkingGreen 1.2s forwards; 
+}
+
+@keyframes blinkingGreen {
+    0% {
+        background-color: var(--new-black);
+    }
+    14% {
+        background-color: var(--pastel-green);
+    }
+    23% {
+        background-color: var(--new-black);
+    }
+    34% {
+        background-color: var(--pastel-green);
+    }
+}
+
+.blinkingRed {
+    animation: blinkingRed 1.2s forwards; 
+}
+
+@keyframes blinkingRed {
+    0% {
+        background-color: var(--new-black);
+    }
+    14% {
+        background-color: var(--pastel-red);
+    }
+    23% {
+        background-color: var(--new-black);
+    }
+    34% {
+        background-color: var(--pastel-red);
+    }
+}

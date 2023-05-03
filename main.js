@@ -1,9 +1,7 @@
-/* AUDIO */
+/* BUTTON RESPONSE */
 
 const correct = document.querySelector('.correct'),
       wrong = document.querySelector('.wrong');
-
-/* BLINKING */
 
 document.addEventListener("click", e => {
     
@@ -12,20 +10,19 @@ document.addEventListener("click", e => {
               boxClass = imagesClass.parentElement,
               imagesNumber = imagesClass.querySelectorAll("img").length;
 
-        function blinking(colorVar) {
-            boxClass.style = `background-color: var(${colorVar})`;
+        function clickResponse(colorVar, sound) {
+            boxClass.classList.add(colorVar);
+            sound.play();
             setTimeout(() => {
-                boxClass.style = `background-color: var(--new-black)`;
-            }, 100);
+                boxClass.classList.remove(colorVar);
+            }, 1200);
         }
 
         if (e.target.innerText === imagesNumber.toString()) {
-            blinking("--pastel-green");
-            correct.play();
+            clickResponse("blinkingGreen", correct);
         }
         else {
-            blinking("--pastel-red");
-            wrong.play();
+            clickResponse("blinkingRed", wrong);
         }
     }
 })
