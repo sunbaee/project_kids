@@ -28,9 +28,9 @@ function generateButtonResponse(imgBox) {
     buttons.forEach(button => {
         const randomNumber = random(1, 9);
         button.innerText = randomNumber;
-        
-        randomButton.innerText = correctResponse;
     });
+
+    randomButton.innerText = correctResponse;
 }
 
 const images = document.querySelectorAll('.images');
