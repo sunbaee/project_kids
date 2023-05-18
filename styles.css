@@ -37,8 +37,6 @@ body {
 }
 
 .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     place-items: center;
     font-size: 0.7em;
     margin: 3em;
@@ -50,8 +48,8 @@ body {
 .block {
     position: relative;
     border: 0.1em solid var(--new-white);
-    width: 25em;
-    height: 25em;
+    width: 40em;
+    height: 40em;
     transition: all .2s;
 }
 
@@ -72,7 +70,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'SchoolBell', cursive;
-    font-size: 1.8em;
+    font-size: 2.8em;
     color: var(--new-white);
     width: 30%;
     height: 100%;
@@ -100,11 +98,20 @@ body {
 }
 
 .images {
+    padding: .4em 0 .4em 0;
     height: 80%;
 }
 
 .image {
-    height: 50%;
+    height: 8.1em;
+    width: 8.1em;
+    padding: 0;
+    margin: 1em 0 0 1.4em;
+}
+
+.textoContador {
+    font-size: 1.8em;
+    margin-top: 1em;
 }
 
 /* ANIMATIONS */

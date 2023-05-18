@@ -5,14 +5,27 @@ function random(min, max) {
 }
 
 function generateImage(imgBox) {
-    const max = random(1, 4);
+    const images = document.querySelectorAll('.image');
+    images.forEach(img => {
+        imgBox.removeChild(img);
+    })
+    const max = random(1, 12);
 
     for(let i = 0; i < max; i++) {
         const imgElement = document.createElement("img");
 
         imgElement.classList.add('image');
-        imgElement.src = `https://as1.ftcdn.net/v2/jpg/02/45/24/32/1000_F_245243273_1VzsxL9SynYTQfCkJ60S0EB8wMSKsmrk.jpg`
-        imgElement.alt = `Dinossauro`
+        const arrayImages = ['./images/dinossauro1.png', './images/dinossauro2.png']
+        imgElement.src = arrayImages[random(0, 1)];
+        imgElement.alt = `Dinossauro`;
+        imgElement.style = `transform: rotate(${random(-16, 16)}deg)`;
+        /* imgElement.animate({
+            transform: `rotate(${random(-16, 16)}deg)`
+        }, {
+            duration: 1000,
+            fill: "forwards",
+            easing: "ease"
+        }); */
 
         imgBox.appendChild(imgElement);
     }
@@ -25,20 +38,26 @@ function generateButtonResponse(imgBox) {
     const randomButton = buttons[random(0, 2)],
           correctResponse = imgBox.querySelectorAll(".image").length;
 
+    const arrayAnswers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    arrayAnswers[correctResponse - 1] = 0;
     buttons.forEach(button => {
-        const randomNumber = random(1, 9);
+        let randomNumber = arrayAnswers[random(0, 11)];
+
+        while(randomNumber === 0) {
+            randomNumber = arrayAnswers[random(0, 11)];
+        }
+
         button.innerText = randomNumber;
+        arrayAnswers[randomNumber - 1] = 0;
     });
 
     randomButton.innerText = correctResponse;
 }
 
-const images = document.querySelectorAll('.images');
+const imgBox = document.querySelector('.images');
 
-images.forEach(imgBox => {
-    generateImage(imgBox);
-    generateButtonResponse(imgBox);
-})
+generateImage(imgBox);
+generateButtonResponse(imgBox);
 
 /* BUTTON RESPONSE */
 
@@ -62,6 +81,8 @@ document.addEventListener("click", e => {
 
         if (e.target.innerText === imagesNumber.toString()) {
             clickResponse("blinkingGreen", correct);
+            generateImage(imgBox);
+            generateButtonResponse(imgBox);
         }
         else {
             clickResponse("blinkingRed", wrong);
