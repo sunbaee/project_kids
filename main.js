@@ -19,13 +19,6 @@ function generateImage(imgBox) {
         imgElement.src = arrayImages[random(0, 1)];
         imgElement.alt = `Dinossauro`;
         imgElement.style = `transform: rotate(${random(-16, 16)}deg)`;
-        /* imgElement.animate({
-            transform: `rotate(${random(-16, 16)}deg)`
-        }, {
-            duration: 1000,
-            fill: "forwards",
-            easing: "ease"
-        }); */
 
         imgBox.appendChild(imgElement);
     }
