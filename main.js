@@ -62,7 +62,10 @@ generateButtonResponse(imgBox);
 /* BUTTON RESPONSE */
 
 const correct = document.querySelector('.correct'),
-      wrong = document.querySelector('.wrong');
+      wrong = document.querySelector('.wrong'),
+      pontuacao = document.querySelector(".pontos");
+
+let pontos = Number(pontuacao.innerText);
 
 document.addEventListener("click", e => {
     
@@ -81,11 +84,20 @@ document.addEventListener("click", e => {
 
         if (e.target.innerText === imagesNumber.toString()) {
             clickResponse("blinkingGreen", correct);
+            
             generateImage(imgBox);
             generateButtonResponse(imgBox);
-        }
-        else {
+
+            pontos++;
+
+        } else {
             clickResponse("blinkingRed", wrong);
+
+            pontos--;
         }
+
+        pontos = pontos < 0 ? 0 : pontos;
+
+        pontuacao.innerText = pontos;
     }
 })
