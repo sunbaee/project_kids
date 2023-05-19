@@ -18,6 +18,7 @@ function generateImage(imgBox) {
         const arrayImages = ['./images/dinossauro1.png', './images/dinossauro2.png']
         imgElement.src = arrayImages[random(0, 1)];
         imgElement.alt = `Dinossauro`;
+        imgElement.draggable = false;
         imgElement.style = `transform: rotate(${random(-16, 16)}deg)`;
 
         imgBox.appendChild(imgElement);
