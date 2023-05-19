@@ -27,6 +27,8 @@ body {
     width: 100vw;
 }
 
+/* INFINITO AZUL TITULO */
+
 .title {
     position: absolute;
     height: max-content;
@@ -35,6 +37,8 @@ body {
     animation: changingColor 5s infinite;
     transform: translateX(-17em);
 }
+
+/* CONTAINER */
 
 .container {
     place-items: center;
@@ -185,5 +189,47 @@ body {
     }
     34% {
         background-color: var(--pastel-red);
+    }
+}
+
+/* MEDIA QUERYS */
+
+/* MUDANDO POSIÇÃO DO TÍTULO */
+
+@media (max-width: 1400px) {
+    .title {
+        transform: translate(0, -11em);
+    }
+}
+
+/* PARA DIFERENTES TAMANHOS DE TELA */
+
+@media (max-height: 2160px) and (max-width: 3840px) {
+    body {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-height: 1440px) and (max-width: 2560px) {
+    body {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-height: 1080px) and (max-width: 1920px) {
+    body {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-height: 900px) and (max-width: 1600px) {
+    body {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-height: 768px) and (max-width: 1366px) {
+    body {
+        font-size: 1em;
     }
 }
