@@ -45,6 +45,8 @@ body {
     gap: 1em;
 }
 
+/* BLOCO QUE CONTÉM IMAGENS E BOTÕES */
+
 .block {
     position: relative;
     border: 0.1em solid var(--new-white);
@@ -52,6 +54,8 @@ body {
     height: 40em;
     transition: all .2s;
 }
+
+/* RESPOSTAS */
 
 .answers {
     position: absolute;
@@ -64,6 +68,8 @@ body {
     border: none;
     padding: 1em;
 }
+
+/* CADA BOTÃO */
 
 .button {
     display: flex;
@@ -97,6 +103,8 @@ body {
     background-color: var(--pastel-red);
 }
 
+/* CONFIGURAÇÃO DAS IMAGENS */
+
 .images {
     padding: .4em 0 .4em 0;
     height: 80%;
@@ -109,12 +117,16 @@ body {
     margin: 1em 0 0 1.4em;
 }
 
+/* CONTADOR */
+
 .textoContador {
     font-size: 1.8em;
     margin-top: 1em;
 }
 
-/* ANIMATIONS */
+/* ANIMAÇÕES */
+
+/* ANIMAÇÃO TÍTULO INFINITO AZUL */
 
 @keyframes changingColor {
     0% {
@@ -134,6 +146,8 @@ body {
     }
 }
 
+/* ANIMAÇÃO RESPOSTA CORRETA */
+
 .blinkingGreen {
     animation: blinkingGreen 1.2s forwards; 
 }
@@ -152,6 +166,8 @@ body {
         background-color: var(--pastel-green);
     }
 }
+
+/* ANIMAÇÃO RESPOSTA INCORRETA */
 
 .blinkingRed {
     animation: blinkingRed 1.2s forwards; 
