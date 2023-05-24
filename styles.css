@@ -6,7 +6,10 @@
     --new-white: rgb(235, 235, 235);
     --pastel-red: rgb(255, 109, 109);
     --pastel-green: rgb(142, 221, 142);
+    --weak-pastel-green: rgba(142, 221, 142, 0.6);
+    --extra-weak-pastel-green: rgba(142, 221, 142, 0.4);
     --pastel-blue: rgb(104, 104, 255);
+    --combo-scale: 1;
 }
 
 * {
@@ -19,12 +22,14 @@ body {
     font-family: 'Schoolbell', cursive;
     font-size: 1.2em;
     display: flex;
+    height: 100vh;
     justify-content: center;
     align-items: center;
     background-color: var(--new-black);
     color: var(--new-white);
     height: 100vh;
     width: 100vw;
+    overflow: hidden;
 }
 
 /* INFINITO AZUL TITULO */
@@ -121,14 +126,184 @@ body {
     margin: 1em 0 0 1.4em;
 }
 
-/* CONTADOR */
+/* CONTADOR DE PONTOS E COMBO*/
 
 .textoContador {
     font-size: 1.8em;
     margin-top: 1em;
 }
 
+/* COMBO */
+
+.comboOff {
+}
+
+.textoCombo {
+    position: absolute;
+    width: max-content;
+    font-size: 2.2em;
+    font-style: italic;
+    margin: .5em 0 0 1em;
+    padding: 0 .4em 0 .3em;
+    top: 0;
+    left: 0;
+    border-radius: 3em;
+    animation: changingTextComboColor 5s infinite;
+    
+}
+
+.textoCombo::after {
+    content: '';
+    position: inherit;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background-color: var(--new-black);
+    transform-origin: right;
+    transform: scaleX(var(--combo-scale));
+    transition: all 1s;
+}
+
+.fraseCombo {
+    position: inherit;
+    width: max-content;
+    margin-top: .5em;
+    font-size: .8em;
+}
+
+/* IMAGENS DO COMBO */
+
+.comboFigure, .comboFigureShadow-1, .comboFigureShadow-2 {
+    position: absolute;
+    top: 30%;
+    left: 90%;
+    height: 20em;
+    width: 20em;
+    border-radius: 50%;
+}
+
+.comboFigure { 
+    background-color: var(--pastel-green);
+    animation: 1s comboAnimation infinite;
+}
+
+.comboFigureShadow-1 {
+    background-color: var(--weak-pastel-green);
+    animation: 1s shadowComboAnimation-1 infinite;
+}
+
+.comboFigureShadow-2 {
+    background-color: var(--extra-weak-pastel-green);
+    animation: 1s shadowComboAnimation-2 infinite;
+}
+
+.dinossaurCombo, .dinossaurShadow {
+    position: absolute;
+    z-index: 1;
+    top: 35%;
+    left: 85%;
+    height: 16em;
+    width: 16em;
+    border-radius: 50%;
+    background-color: var(--pastel-green);
+    animation: dinossaurAnimation 2s infinite;
+}
+
+.dinossaurShadow {
+    z-index: -1;
+    background-color: var(--pastel-blue);
+    animation: 2s dinossaurShadowAnimation infinite;
+}
+
 /* ANIMAÇÕES */
+
+/* ANIMAÇÃO TEXTO COMBO */
+
+@keyframes changingTextComboColor {
+    0% {
+        background-color: var(--pastel-red);
+    }
+
+    33% {
+        background-color: var(--pastel-blue)
+    }
+
+    66% {
+        background-color: var(--pastel-green);
+    }
+
+    100% {
+        background-color: var(--pastel-red)
+    }
+}
+
+/* ANIMAÇÃO COMBO */
+
+@keyframes dinossaurAnimation {
+    0% {
+        transform: translateX(100%) rotate(180deg) scale(1.4);
+    }
+    40% {
+        transform: translateX(0) rotate(0);
+    }
+    60% {
+        transform: translateX(0) rotate(20deg) scale(1.1);
+    }
+    100% {
+        transform: translateX(100%) rotate(-180deg) scale(0.7);
+    }
+}
+
+@keyframes dinossaurShadowAnimation {
+    0% {
+        transform: translateX(100%) rotate(180deg) scale(1.4);
+        background-color: transparent;
+    }
+    40% {
+        transform: translateX(0) rotate(0);
+    }
+    60% {
+        transform: translateX(0) rotate(20deg) scale(1.4);
+        background-color: var(--weak-pastel-green);
+    }
+    100% {
+        transform: translateX(100%) rotate(-180deg) scale(0.7);
+        background-color: transparent;
+    }
+}
+
+@keyframes comboAnimation {
+    0% {
+        transform: scale(1);
+    }
+    95% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes shadowComboAnimation-1 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.4);
+        background-color: transparent;
+    }
+}
+
+@keyframes shadowComboAnimation-2 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(2);
+        background-color: transparent;
+    }
+}
 
 /* ANIMAÇÃO TÍTULO INFINITO AZUL */
 

@@ -57,9 +57,12 @@ generateButtonResponse(imgBox);
 
 const correct = document.querySelector('.correct'),
       wrong = document.querySelector('.wrong'),
-      pontuacao = document.querySelector(".pontos");
+      pontuacao = document.querySelector('.pontos'),
+      comboResultado = document.querySelector('.resultadoCombo'),
+      comboTexto = document.querySelector('.textoCombo');
 
-let pontos = Number(pontuacao.innerText);
+let pontos = 0;
+let combo = 0;
 
 document.addEventListener("click", e => {
     
@@ -76,22 +79,47 @@ document.addEventListener("click", e => {
             }, 1200);
         }
 
+        function changeComboText(text) {
+            const paragraph = document.querySelector('.fraseCombo');
+            paragraph.innerText = text;
+        }
+
         if (e.target.innerText === imagesNumber.toString()) {
             clickResponse("blinkingGreen", correct);
             
             generateImage(imgBox);
             generateButtonResponse(imgBox);
 
-            pontos++;
+            combo++;
+
+            if (combo >= 5) {
+                comboTexto.style.setProperty('--combo-scale', 0);
+            }
+            if (combo >= 5 && combo < 10) {
+                changeComboText('Tá melhorando!');
+                pontos += 2;
+            } else if (combo >= 10 && combo < 15) {
+                changeComboText('Você é bom nisso, hein?');
+                pontos += 3;
+            } else if (combo >= 15) {
+                changeComboText('DEMAIS!');
+                pontos += 4;
+            } else {
+                comboTexto.style.setProperty('--combo-scale', 1);
+                changeComboText('');
+                pontos++;
+            }
 
         } else {
             clickResponse("blinkingRed", wrong);
 
-            pontos--;
+            pontos -= 2;
+            combo = 0;
         }
 
         pontos = pontos < 0 ? 0 : pontos;
 
         pontuacao.innerText = pontos;
+        comboResultado.innerText = combo;
     }
 })
