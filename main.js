@@ -57,9 +57,13 @@ generateButtonResponse(imgBox);
 
 const correct = document.querySelector('.correct'),
       wrong = document.querySelector('.wrong'),
-      pontuacao = document.querySelector('.pontos'),
-      comboResultado = document.querySelector('.resultadoCombo'),
+      pontuacao = document.querySelector('.pontos');
+
+const comboResultado = document.querySelector('.resultadoCombo'),
       comboTexto = document.querySelector('.textoCombo');
+
+const comboBackground = document.querySelector('.comboBackgroundDecoration'),
+      dinossaurDecoration = document.querySelector('.dinossaurDecoration');
 
 let pontos = 0;
 let combo = 0;
@@ -92,29 +96,35 @@ document.addEventListener("click", e => {
 
             combo++;
 
-            if (combo >= 5) {
-                comboTexto.style.setProperty('--combo-scale', 0);
-            }
             if (combo >= 5 && combo < 10) {
                 changeComboText('Tá melhorando!');
+                comboTexto.style.setProperty('--combo-scale', 0);
                 pontos += 2;
             } else if (combo >= 10 && combo < 15) {
                 changeComboText('Você é bom nisso, hein?');
+                comboBackground.classList.add('comboBackgroundOn');
                 pontos += 3;
             } else if (combo >= 15) {
                 changeComboText('DEMAIS!');
+                dinossaurDecoration.classList.add('comboDinossaurOn');
                 pontos += 4;
             } else {
-                comboTexto.style.setProperty('--combo-scale', 1);
-                changeComboText('');
                 pontos++;
             }
 
         } else {
             clickResponse("blinkingRed", wrong);
 
-            pontos -= 2;
+            changeComboText('');
+            comboTexto.style.setProperty('--combo-scale', '-150%');
+
+            comboBackground.classList.remove('comboBackgroundOn');
+            dinossaurDecoration.classList.remove('comboDinossaurOn');
+            comboBackground.classList.add('comboOff');
+            dinossaurDecoration.classList.add('comboOff');
+            
             combo = 0;
+            pontos -= 3;
         }
 
         pontos = pontos < 0 ? 0 : pontos;

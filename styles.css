@@ -9,7 +9,7 @@
     --weak-pastel-green: rgba(142, 221, 142, 0.6);
     --extra-weak-pastel-green: rgba(142, 221, 142, 0.4);
     --pastel-blue: rgb(104, 104, 255);
-    --combo-scale: 1;
+    --combo-scale: -150%;
 }
 
 * {
@@ -135,33 +135,18 @@ body {
 
 /* COMBO */
 
-.comboOff {
-}
-
 .textoCombo {
     position: absolute;
     width: max-content;
     font-size: 2.2em;
     font-style: italic;
-    margin: .5em 0 0 1em;
+    margin: .5em 0 0 .5em;
     padding: 0 .4em 0 .3em;
     top: 0;
     left: 0;
     border-radius: 3em;
     animation: changingTextComboColor 5s infinite;
-    
-}
-
-.textoCombo::after {
-    content: '';
-    position: inherit;
-    top: 0;
-    left: 0;
-    width: 100%; 
-    height: 100%;
-    background-color: var(--new-black);
-    transform-origin: right;
-    transform: scaleX(var(--combo-scale));
+    transform: translateX(var(--combo-scale));
     transition: all 1s;
 }
 
@@ -174,10 +159,29 @@ body {
 
 /* IMAGENS DO COMBO */
 
-.comboFigure, .comboFigureShadow-1, .comboFigureShadow-2 {
+.comboOff {
+    position: absolute;
+    top: 0;
+    left: 200%;
+    transition: all 1s;
+}
+
+.comboBackgroundOn {
     position: absolute;
     top: 30%;
     left: 90%;
+    transition: all 1s;
+}
+
+.comboDinossaurOn {
+    position: absolute;
+    top: 35%;
+    left: 85%;
+    transition: all 1s;
+}
+
+.comboFigure, .comboFigureShadow-1, .comboFigureShadow-2 {
+    position: inherit;
     height: 20em;
     width: 20em;
     border-radius: 50%;
@@ -199,10 +203,8 @@ body {
 }
 
 .dinossaurCombo, .dinossaurShadow {
-    position: absolute;
+    position: inherit;
     z-index: 1;
-    top: 35%;
-    left: 85%;
     height: 16em;
     width: 16em;
     border-radius: 50%;
