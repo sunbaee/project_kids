@@ -62,9 +62,6 @@ const correct = document.querySelector('.correct'),
 const comboResultado = document.querySelector('.resultadoCombo'),
       comboTexto = document.querySelector('.textoCombo');
 
-const comboBackground = document.querySelector('.comboBackgroundDecoration'),
-      dinossaurDecoration = document.querySelector('.dinossaurDecoration');
-
 let pontos = 0;
 let combo = 0;
 
@@ -102,11 +99,9 @@ document.addEventListener("click", e => {
                 pontos += 2;
             } else if (combo >= 10 && combo < 15) {
                 changeComboText('Você é bom nisso, hein?');
-                comboBackground.classList.add('comboBackgroundOn');
                 pontos += 3;
             } else if (combo >= 15) {
                 changeComboText('DEMAIS!');
-                dinossaurDecoration.classList.add('comboDinossaurOn');
                 pontos += 4;
             } else {
                 pontos++;
@@ -117,11 +112,6 @@ document.addEventListener("click", e => {
 
             changeComboText('');
             comboTexto.style.setProperty('--combo-scale', '-150%');
-
-            comboBackground.classList.remove('comboBackgroundOn');
-            dinossaurDecoration.classList.remove('comboDinossaurOn');
-            comboBackground.classList.add('comboOff');
-            dinossaurDecoration.classList.add('comboOff');
             
             combo = 0;
             pontos -= 3;
