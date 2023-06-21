@@ -1,0 +1,26 @@
+{
+  "name": "project_kids",
+  "description": "Esse projeto está sendo desenvolvido para auxiliar crianças que possuem dificuldade de concentração por meio do uso de elementos tanto visuais como auditivos.",
+  "version": "1.0.0",
+  "main": "main.js",
+  "keywords": [],
+  "author": "sunbaee._",
+  "license": "ISC",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.2.1",
+    "@electron-forge/maker-deb": "^6.2.1",
+    "@electron-forge/maker-rpm": "^6.2.1",
+    "@electron-forge/maker-squirrel": "^6.2.1",
+    "@electron-forge/maker-zip": "^6.2.1",
+    "@electron-forge/plugin-auto-unpack-natives": "^6.2.1",
+    "electron": "^25.1.1"
+  },
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  }
+}
