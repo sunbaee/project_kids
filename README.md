@@ -8,10 +8,10 @@ Para cada acerto, você acumula um ponto, e para cada erro você perde um ponto.
 
 Existe também um sistema de combo, o qual faz com que quanto mais acertos seguidos você tiver, mais pontos ganhará por acerto!
 
-Para criar um aplicativo do jogo, após a instalação da pasta, abra o GIT e execute os seguintes comandos:
+### Para criar um aplicativo do jogo, após a instalação da pasta, abra o GIT e execute os seguintes comandos:
 
-npm init
-npm run make
+#### npm init
+#### npm run make
 
 Isso criará uma pasta out, contendo duas pastas, na pasta make (out/make), estará o arquivo executável do aplicativo, feito utilizando electron.
 
