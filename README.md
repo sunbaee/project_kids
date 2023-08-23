@@ -14,3 +14,10 @@ Existe também um sistema de combo, o qual faz com que quanto mais acertos segui
 #### npm run make
 
 Isso criará uma pasta out, contendo duas pastas, na pasta make (out/make), estará o arquivo executável do aplicativo, feito utilizando electron.
+
+Basta criar um atalho para o executável desse jogo ou abrí-lo diretamente para comerçar a jogar :)
+
+## Não permito o plágio desse projeto !!!
+
+# Porém, caso haja alguma ideia para o projeto ou tenha alguma ideia em mente, basta enviar uma mensagem para minhas redes sociais :D
+# Os links para minhas redes sociais estão localizados no meu perfil.
