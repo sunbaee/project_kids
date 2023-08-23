@@ -19,5 +19,5 @@ Basta criar um atalho para o executável desse jogo ou abrí-lo diretamente para
 
 ## Não permito o plágio desse projeto !!!
 
-# Porém, caso haja alguma ideia para o projeto ou tenha alguma ideia em mente, basta enviar uma mensagem para minhas redes sociais :D
-# Os links para minhas redes sociais estão localizados no meu perfil.
+### Porém, caso haja alguma ideia para o projeto ou tenha alguma ideia em mente, basta enviar uma mensagem para minhas redes sociais :D
+Os links para minhas redes sociais estão localizados no meu perfil.
