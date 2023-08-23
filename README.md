@@ -14,7 +14,3 @@ Existe também um sistema de combo, o qual faz com que quanto mais acertos segui
 #### npm run make
 
 Isso criará uma pasta out, contendo duas pastas, na pasta make (out/make), estará o arquivo executável do aplicativo, feito utilizando electron.
-
-## Você pode visualizar o projeto pelo link abaixo: 
-
-sunbaee.github.io/project_kids/
