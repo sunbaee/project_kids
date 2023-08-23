@@ -13,7 +13,7 @@ Existe também um sistema de combo, o qual faz com que quanto mais acertos segui
 #### npm i
 #### npm run make
 
-Isso criará uma pasta out, contendo duas pastas, na pasta make (out/make), estará o arquivo executável do aplicativo, feito utilizando electron.
+Isso criará uma pasta out, contendo duas pastas, na pasta project_kids-win32-x64 (out/project_kids-win32-x64), estará o arquivo executável do aplicativo, com o nome de project_kids, feito utilizando electron.
 
 Basta criar um atalho para o executável desse jogo ou abrí-lo diretamente para comerçar a jogar :)
 
