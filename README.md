@@ -10,7 +10,7 @@ Existe também um sistema de combo, o qual faz com que quanto mais acertos segui
 
 ### Para criar um aplicativo do jogo, após a instalação da pasta, abra o GIT e execute os seguintes comandos:
 
-#### npm init
+#### npm i
 #### npm run make
 
 Isso criará uma pasta out, contendo duas pastas, na pasta make (out/make), estará o arquivo executável do aplicativo, feito utilizando electron.
