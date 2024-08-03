@@ -17,7 +17,6 @@ Isso criará uma pasta out, contendo duas pastas, na pasta project_kids-win32-x6
 
 Basta criar um atalho para o executável desse jogo ou abrí-lo diretamente para comerçar a jogar :)
 
-## Não permito o plágio desse projeto !!!
+## Extra:
 
-### Porém, caso haja alguma ideia para o projeto ou tenha alguma ideia em mente, basta enviar uma mensagem para minhas redes sociais :D
-Os links para minhas redes sociais estão localizados no meu perfil.
+Sinta-se à vontade para fazer modificações no programa. Apenas dê crédito, _caso deseje publicar o programa com modificações ou algo do tipo._ :D
