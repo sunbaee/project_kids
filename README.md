@@ -19,4 +19,4 @@ Basta criar um atalho para o executável desse jogo ou abrí-lo diretamente para
 
 ## Extra:
 
-Sinta-se à vontade para fazer modificações no programa. Apenas dê crédito, _caso deseje publicar o programa com modificações ou algo do tipo._ :D
+Sinta-se à vontade para fazer modificações no programa. Agradeceria um crédito, _caso deseje publicar o programa modificado ou algo do tipo._ :D
